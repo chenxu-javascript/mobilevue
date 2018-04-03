@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="format-detection" content="telephone=no" />
+  <title>Document</title>
+</head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  html, body{
+    background: #f4f4f4;
+    width: 100%;
+    height: 100%;
+  }
+  .item{
+    background:#fff;
+    height: 3.6rem;
+    box-sizing: border-box;
+    margin: .2rem;
+    position: relative;
+  }
+  .imgsclass{
+    width: 1.84rem;
+    height: 1.84rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: .4rem;
+    transform: translateY(-0.92rem);
+  }
+  .text{
+    font-size: 16px; 
+    position: absolute;
+    left: 3rem;
+    padding: 0 0.5rem;
+    border-left: 1px solid #eee;
+    top: 50%;
+    transform: translateY(-30px);
+  }
+  .num{
+    font-size: 28px;
+    font-weight: bold;
+  }
+</style>
+<body>
+  <div class="item">
+    <img src="https://dn-zbj-boss.qbox.me/@/default/2017-02-07/5899666127dd1.png?a=1?a=1" alt="" class="imgsclass" >
+    <div class="text">
+      <p><span class="num">23</span>条</p>
+      <p>本月新建工作流</p>
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://dn-zbj-boss.qbox.me/@/default/2017-02-07/5899666127dd1.png?a=1?a=1" alt="" class="imgsclass">
+  </div>
+  <div class="item"> 
+    <img src="https://dn-zbj-boss.qbox.me/@/default/2017-02-07/5899666127dd1.png?a=1?a=1" alt="" class="imgsclass">
+  </div>
+</body>
+<script>
+  (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+</html>
